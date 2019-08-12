@@ -8,21 +8,26 @@ import (
 
 func main() {
 	app := cli.NewApp()
-	app.Name = "docker-like"
-	app.Usage = "lite docker-cli"
+	app.Name = "apcli"
+	app.Usage = "Auto make Apache+PHP"
 	app.Version = "0.0.1"
 
 	app.Commands = []cli.Command{
 		{
-			Name:   "version",
-			Action: cmd.Version,
-			Usage:  "docker version",
+			Name:   "all_update",
+			Action: cmd.All_Update,
+			Usage:  "system update",
 		},
 		{
-			Name:   "ps",
-			Action: cmd.Ps,
-			Usage:  "docker ps",
+			Name:   "cli-apache",
+			Action: cmd.Setup_apa,
+			Usage:  "setup apache",
 		},
+		{
+			Name:   "cli-php",
+			Action: cmd.Setup_php,
+			Usage:  "setup php"
+		}
 	}
 	app.Run(os.Args)
 }
