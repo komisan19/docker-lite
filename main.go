@@ -26,8 +26,8 @@ func main() {
 		{
 			Name:   "cli-php",
 			Action: cmd.Setup_php,
-			Usage:  "setup php"
-		}
+			Usage:  "setup php",
+		},
 	}
 	app.Run(os.Args)
 }
